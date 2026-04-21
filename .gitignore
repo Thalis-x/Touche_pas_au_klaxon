@@ -1,0 +1,11 @@
+/vendor/
+/node_modules/
+/config/database.php
+/public/assets/css/*.css
+/public/assets/css/*.css.map
+.phpunit.result.cache
+.phpstan.cache/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
