@@ -1,0 +1,15 @@
+<?php
+/**
+ * Configuration de la connexion à la base de données.
+ *
+ * Copier ce fichier vers config/database.php
+ * et compléter avec les paramètres locaux.
+ */
+
+return [
+    'host'     => 'localhost',
+    'dbname'   => 'touche_pas_au_klaxon',
+    'user'     => 'root',
+    'password' => '',
+    'charset'  => 'utf8mb4',
+];
