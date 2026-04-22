@@ -39,6 +39,32 @@ class Trajet extends Model
     }
 
     /**
+     * Récupère les trajets disponibles avec les infos de l'employé.
+     *
+     * @return array<int,array<string,mixed>>
+     */
+    public static function findDisponiblesWithDetails(): array
+    {
+        $sql = '
+            SELECT t.*,
+                   dep.nom_ville AS ville_depart,
+                   arr.nom_ville AS ville_arrivee,
+                   e.nom AS employe_nom,
+                   e.prenom AS employe_prenom,
+                   e.email AS employe_email,
+                   e.telephone AS employe_telephone
+            FROM trajet t
+            INNER JOIN agence dep ON t.id_agence_depart = dep.id_agence
+            INNER JOIN agence arr ON t.id_agence_arrivee = arr.id_agence
+            INNER JOIN employe e ON t.id_employe = e.id_employe
+            WHERE t.nb_places_disponibles > 0
+              AND t.date_heure_depart > NOW()
+            ORDER BY t.date_heure_depart ASC
+        ';
+        return self::db()->query($sql)->fetchAll();
+    }
+
+    /**
      * Récupère tous les trajets avec les noms des villes (pour l'admin).
      *
      * @return array<int,array<string,mixed>>
