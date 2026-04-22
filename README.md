@@ -14,7 +14,7 @@ Application intranet de covoiturage inter-sites permettant aux employés de part
 1. Cloner le dépôt :
 ```bash
    git clone https://github.com/Thalis-x/Touche_pas_au_klaxon
-   cd VOTRE-REPO
+   cd cd Touche_pas_au_klaxon
 ```
 
 2. Installer les dépendances PHP :
