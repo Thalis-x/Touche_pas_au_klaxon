@@ -28,15 +28,18 @@ class View
         array $data = [],
         string $layout = 'layouts/main'
     ): void {
-        $content = self::renderPartial($view, $data);
-
+        // Variables communes injectées AVANT le rendu de la vue
         $config = require __DIR__ . '/../../config/app.php';
-        $data['content']   = $content;
         $data['appName']   = $config['name'];
         $data['copyright'] = $config['copyright'];
-        $data['user']      = Session::user();
+        $data['user']      = $data['user'] ?? Session::user();
         $data['flash']     = Session::consumeFlash();
 
+        // Rendu de la vue
+        $content = self::renderPartial($view, $data);
+
+        // Injection du contenu dans le layout
+        $data['content'] = $content;
         self::renderPartial($layout, $data, false);
     }
 
