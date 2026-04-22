@@ -37,3 +37,35 @@ $router->post('/trajet/edit/:id', function ($id) {
 $router->post('/trajet/delete/:id', function ($id) {
     (new App\Controllers\TrajetController())->delete((int) $id);
 });
+
+// Zone administrateur
+$router->get('/admin', function () {
+    (new App\Controllers\AdminController())->dashboard();
+});
+$router->get('/admin/employes', function () {
+    (new App\Controllers\AdminController())->listEmployes();
+});
+$router->get('/admin/agences', function () {
+    (new App\Controllers\AgenceController())->index();
+});
+$router->get('/admin/agences/create', function () {
+    (new App\Controllers\AgenceController())->showCreate();
+});
+$router->post('/admin/agences/create', function () {
+    (new App\Controllers\AgenceController())->create();
+});
+$router->get('/admin/agences/edit/:id', function ($id) {
+    (new App\Controllers\AgenceController())->showEdit((int) $id);
+});
+$router->post('/admin/agences/edit/:id', function ($id) {
+    (new App\Controllers\AgenceController())->update((int) $id);
+});
+$router->post('/admin/agences/delete/:id', function ($id) {
+    (new App\Controllers\AgenceController())->delete((int) $id);
+});
+$router->get('/admin/trajets', function () {
+    (new App\Controllers\AdminController())->listTrajets();
+});
+$router->post('/admin/trajets/delete/:id', function ($id) {
+    (new App\Controllers\AdminController())->deleteTrajet((int) $id);
+});
