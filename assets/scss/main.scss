@@ -1,0 +1,32 @@
+// Import des surcharges AVANT Bootstrap (obligatoire)
+@import "variables";
+
+// Import de Bootstrap depuis node_modules
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// =====================================================================
+// Styles personnalisés
+// =====================================================================
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.btn-dark {
+    background-color: $dark-blue;
+    border-color: $dark-blue;
+
+    &:hover {
+        background-color: darken($dark-blue, 10%);
+        border-color: darken($dark-blue, 10%);
+    }
+}
+
+.table thead.table-dark {
+    background-color: $dark-gray;
+}
+
+footer {
+    background-color: #ffffff;
+    color: $dark-gray;
+}

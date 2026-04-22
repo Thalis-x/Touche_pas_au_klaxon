@@ -1,0 +1,28 @@
+// =====================================================================
+// Palette de couleurs imposée
+// =====================================================================
+$light-blue:   #f1f8fc;
+$primary-blue: #0074c7;
+$dark-blue:    #00497c;
+$dark-gray:    #384050;
+$red:          #cd2c2e;
+$green:        #82b864;
+
+// =====================================================================
+// Surcharge des variables Bootstrap
+// =====================================================================
+$primary:   $primary-blue;
+$secondary: $dark-gray;
+$success:   $green;
+$danger:    $red;
+$info:      $light-blue;
+$dark:      $dark-blue;
+
+$body-bg:    $light-blue;
+$body-color: $dark-gray;
+
+$navbar-light-bg: #ffffff;
+
+$link-color: $primary-blue;
+
+$table-striped-bg-factor: 0.03;
