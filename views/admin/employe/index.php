@@ -14,7 +14,7 @@ use App\Core\View;
         <tr>
             <th>Nom</th>
             <th>Prénom</th>
-            <th>Email</th> Ajou
+            <th>Email</th>
             <th>Téléphone</th>
             <th>Rôle</th>
         </tr>

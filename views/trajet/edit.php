@@ -37,6 +37,7 @@ use App\Core\View;
         <div class="col-md-4">
             <label for="agence_depart" class="form-label">Agence de départ</label>
             <select class="form-select" id="agence_depart" name="agence_depart" required>
+                <option value="">-- Choisir --</option>
                 <?php foreach ($agences as $agence): ?>
                     <option value="<?= (int) $agence['id_agence'] ?>"
                         <?= (int) $agence['id_agence'] === (int) $trajet['id_agence_depart'] ? 'selected' : '' ?>>
@@ -62,6 +63,7 @@ use App\Core\View;
         <div class="col-md-4">
             <label for="agence_arrivee" class="form-label">Agence d'arrivée</label>
             <select class="form-select" id="agence_arrivee" name="agence_arrivee" required>
+                <option value="">-- Choisir --</option>
                 <?php foreach ($agences as $agence): ?>
                     <option value="<?= (int) $agence['id_agence'] ?>"
                         <?= (int) $agence['id_agence'] === (int) $trajet['id_agence_arrivee'] ? 'selected' : '' ?>>
