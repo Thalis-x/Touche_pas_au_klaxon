@@ -7,7 +7,9 @@
 use App\Core\View;
 ?>
 
-<p class="text-muted fs-5">Pour obtenir plus d'informations sur un trajet, veuillez vous connecter</p>
+<?php if (!$user): ?>
+    <p class="text-muted fs-5">Pour obtenir plus d'informations sur un trajet, veuillez vous connecter</p>
+<?php endif; ?>
 
 <h2>Trajets proposés</h2>
 
