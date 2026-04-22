@@ -87,12 +87,12 @@ use App\Core\View;
         <div class="col-md-4">
             <label for="nb_places" class="form-label">Nombre total de places</label>
             <input type="number" class="form-control" id="nb_places" name="nb_places"
-                   min="1" max="9" value="<?= (int) $trajet['nb_places_total'] ?>" required>
+                   min="1" max="7" value="<?= (int) $trajet['nb_places_total'] ?>" required>
         </div>
         <div class="col-md-4">
             <label for="nb_places_disponibles" class="form-label">Places disponibles</label>
             <input type="number" class="form-control" id="nb_places_disponibles" name="nb_places_disponibles"
-                   min="0" max="9" value="<?= (int) $trajet['nb_places_disponibles'] ?>" required>
+                   min="0" max="7" value="<?= (int) $trajet['nb_places_disponibles'] ?>" required>
         </div>
     </div>
 

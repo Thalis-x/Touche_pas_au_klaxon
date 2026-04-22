@@ -21,5 +21,19 @@ $router->get('/logout', function () {
     (new App\Controllers\AuthController())->logout();
 });
 
-// Les autres routes seront ajoutées au fur et à mesure
-// qu'on crée les contrôleurs correspondants.
+// Zone utilisateur connecté
+$router->get('/trajet/create', function () {
+    (new App\Controllers\TrajetController())->showCreate();
+});
+$router->post('/trajet/create', function () {
+    (new App\Controllers\TrajetController())->create();
+});
+$router->get('/trajet/edit/:id', function ($id) {
+    (new App\Controllers\TrajetController())->showEdit((int) $id);
+});
+$router->post('/trajet/edit/:id', function ($id) {
+    (new App\Controllers\TrajetController())->update((int) $id);
+});
+$router->post('/trajet/delete/:id', function ($id) {
+    (new App\Controllers\TrajetController())->delete((int) $id);
+});

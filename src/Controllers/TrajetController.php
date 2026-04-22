@@ -211,12 +211,19 @@ class TrajetController extends Controller
         $depart  = strtotime("$dateDepart $heureDepart");
         $arrivee = strtotime("$dateArrivee $heureArrivee");
 
+          if ($depart && $depart <= time()) {
+            $errors[] = 'La date de départ doit être dans le futur.';
+        }
+
         if ($depart && $arrivee && $arrivee <= $depart) {
             $errors[] = "La date d'arrivée doit être postérieure à la date de départ.";
         }
 
         if ((int) $nbPlaces < 1) {
             $errors[] = 'Le nombre de places doit être au minimum 1.';
+        }
+        if ((int) $nbPlaces > 7) {
+            $errors[] = 'Le nombre de places doit être au maximum 7.';
         }
 
         return $errors;

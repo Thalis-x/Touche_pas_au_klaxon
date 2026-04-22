@@ -82,7 +82,7 @@ use App\Core\View;
     <div class="row mb-3">
         <div class="col-md-4">
             <label for="nb_places" class="form-label">Nombre de places</label>
-            <input type="number" class="form-control" id="nb_places" name="nb_places" min="1" max="9" required>
+            <input type="number" class="form-control" id="nb_places" name="nb_places" min="1" max="7" required>
         </div>
     </div>
 
